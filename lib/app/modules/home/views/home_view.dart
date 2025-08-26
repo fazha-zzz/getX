@@ -22,6 +22,11 @@ class HomeView extends GetView<HomeController> {
         ElevatedButton(onPressed: ()  => Get.toNamed('/counter'), 
         child: Text('Go to counter')
         ),
+        
+        ElevatedButton(
+              onPressed: () => Get.toNamed('/form-pendaftaran'),
+              child: Text('Go to from pendaftaran'),
+            ),
       ],
       ),
       ),

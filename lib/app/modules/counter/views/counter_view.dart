@@ -30,14 +30,14 @@ class CounterView extends GetView<CounterController> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-              ),
+              ),       
               onPressed: controller.increment,
               child: const Text('+', style: TextStyle(fontSize: 16)),
             ),
 
             const SizedBox(height: 10),
 
-           
+            
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
