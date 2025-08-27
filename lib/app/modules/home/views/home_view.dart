@@ -27,6 +27,11 @@ class HomeView extends GetView<HomeController> {
               onPressed: () => Get.toNamed('/form-pendaftaran'),
               child: Text('Go to from pendaftaran'),
             ),
+            
+             ElevatedButton(
+              onPressed: () => Get.toNamed('/post'),
+              child: Text('Go to from post'),
+            ),
       ],
       ),
       ),
