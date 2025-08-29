@@ -6,11 +6,11 @@ import '../controllers/form_pendaftaran_controller.dart';
 import 'package:intl/intl.dart';
 
 class FormPendaftaranView extends GetView<FormPendaftaranController> {
-  const FormPendaftaranView({
+   FormPendaftaranView({
     super.key,
     
   });
-
+  final FormPendaftaranController controller = Get.put(FormPendaftaranController());
   @override
   Widget build(BuildContext context) {
     final FormPendaftaranController controller = Get.put(

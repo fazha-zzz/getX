@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:latihan_getx/app/modules/counter/controllers/counter_controller.dart';
 
 class CounterView extends GetView<CounterController> {
-  const CounterView({super.key});
-
+  CounterView({super.key});
+  final CounterController controller = Get.put(CounterController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,11 +16,11 @@ class CounterView extends GetView<CounterController> {
             Obx(
               () => Text(
                 "Hitung ke: ${controller.hitung}",
-                style:  TextStyle(fontSize: controller.hitung.value.toDouble()),
+                style: TextStyle(fontSize: controller.hitung.value.toDouble()),
               ),
             ),
-            const SizedBox(height: 20), 
-            
+            const SizedBox(height: 20),
+
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
@@ -30,14 +30,13 @@ class CounterView extends GetView<CounterController> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-              ),       
+              ),
               onPressed: controller.increment,
               child: const Text('+', style: TextStyle(fontSize: 16)),
             ),
 
             const SizedBox(height: 10),
 
-            
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(

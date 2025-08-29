@@ -1,20 +1,17 @@
 import 'package:get/get.dart';
-import 'package:latihan_getx/app/data/models/post.dart';
-import 'package:latihan_getx/app/services/post_services.dart';
+import 'package:latihan_getx/app/data/models/qulan.dart';
+import 'package:latihan_getx/app/services/alqulan_services.dart';
 
-class PostController extends GetxController {
-  final PostServices _postServices = Get.put<PostServices>(PostServices());
-  
+class AlqulanController extends GetxController {
+  final AlqulanServices _postServices = Get.put<AlqulanServices>(AlqulanServices());
 
-  RxList posts = <Post>[].obs; 
+  RxList alqulan = <QulanModel>[].obs;
   RxBool isLoading = true.obs;
   RxString errorMessage = ''.obs;
 
-  get titleC => null;
+  get fetchAlqulan => null;
 
-  get bodyC => null;
-
-   @override
+  @override
   void onInit() {
     super.onInit();
     fetchPosts();
@@ -24,13 +21,13 @@ class PostController extends GetxController {
     try {
       isLoading(true);
       errorMessage('');
-      final response = await _postServices.fetchPosts();
+      final response = await _postServices.fetchAlqulan();
 
       if (response.statusCode == 200) {
         var data = response.body!
-            .map((postJson) => Post.fromJson(postJson))
+            .map((qulanJson) => QulanModel.fromJson(qulanJson))
             .toList();
-        posts.assignAll(data);
+        alqulan.assignAll(data);
       } else {
         errorMessage('Error: ${response.statusText}');
       }
@@ -40,7 +37,4 @@ class PostController extends GetxController {
       isLoading(false);
     }
   }
-
-  void createPost() {}
-
 }

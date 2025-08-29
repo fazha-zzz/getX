@@ -9,4 +9,6 @@ class PostServices extends GetConnect {
   Future<Response<List<dynamic>>> fetchPosts() {
     return get('/posts');
   }
+
+ 
 }
